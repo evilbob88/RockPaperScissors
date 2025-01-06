@@ -15,6 +15,7 @@ function getHumanChoice() {
     let choice = prompt("Rock, Paper or Scissors?").toLowerCase()
     if(!(choice == 'rock' || choice == 'paper' || choice == 'scissors')) {
         console.log("This is not a valid choice.");
+        round -= 1
         return null;
     }
     return choice;    
@@ -67,7 +68,7 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-    while (round <= 5) {
+    while (round < 5) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection)
